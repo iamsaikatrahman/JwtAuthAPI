@@ -1,4 +1,6 @@
 using JwtAuthAPI.Core.Entities;
+using JwtAuthAPI.Core.Interfaces;
+using JwtAuthAPI.Core.Services;
 using JwtAuthAPI.DbContext;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -59,7 +61,8 @@ builder.Services
         };
     });
 
-
+//Dependency Injection
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
