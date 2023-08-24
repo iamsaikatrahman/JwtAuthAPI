@@ -1,3 +1,4 @@
+using JwtAuthAPI.Core.Entities;
 using JwtAuthAPI.DbContext;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -20,7 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //Add Identity
 builder.Services
-    .AddIdentity<IdentityUser, IdentityRole>()
+    .AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
